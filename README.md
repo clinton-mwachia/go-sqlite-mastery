@@ -20,6 +20,7 @@ The goal of this repository is to teach you how to use **Go** with **SQLite** to
 12. **Limit Results**
 13. **Where Clause**
 14. **Between Clause**
+15. **And Clause**
 
 ---
 
