@@ -17,6 +17,7 @@ The goal of this repository is to teach you how to use **Go** with **SQLite** to
 9. **Delete many rows from a Table**
 10. **Import csv data into the Table**
 11. **Order results By**
+12. **Limit Results**
 
 ---
 
