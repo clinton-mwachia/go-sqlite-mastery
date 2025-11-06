@@ -3,12 +3,10 @@ package utils
 import (
 	"database/sql"
 	"encoding/csv"
-	"fmt"
 	"os"
 	"strconv"
-	"strings"
 
-	"github.com/clinton-mwachia/go-sqlite-mastery/13-where/models"
+	"github.com/clinton-mwachia/go-sqlite-mastery/14-between/models"
 	_ "github.com/glebarez/go-sqlite"
 )
 
@@ -70,42 +68,10 @@ func Insert(db *sql.DB, c *models.Country) (int64, error) {
 	return result.LastInsertId()
 }
 
-func FindByPopulationEqual(db *sql.DB, population int) ([]models.Country, error) {
-	query := `SELECT id, name, population, area FROM countries WHERE population = ?`
+func FindByPopulationBetween(db *sql.DB, min, max int) ([]models.Country, error) {
+	query := `SELECT id, name, population, area FROM countries WHERE population BETWEEN ? AND ?`
 
-	rows, err := db.Query(query, population)
-	if err != nil {
-		return nil, err
-	}
-	defer rows.Close()
-
-	var countries []models.Country
-	for rows.Next() {
-		var c models.Country
-		if err := rows.Scan(&c.Id, &c.Name, &c.Population, &c.Area); err != nil {
-			return nil, err
-		}
-		countries = append(countries, c)
-	}
-	return countries, rows.Err()
-}
-
-func FindByPopulationIn(db *sql.DB, populations []int) ([]models.Country, error) {
-	if len(populations) == 0 {
-		return nil, nil
-	}
-
-	placeholders := strings.Repeat("?,", len(populations))
-	placeholders = placeholders[:len(placeholders)-1] // remove last comma
-
-	query := fmt.Sprintf(`SELECT id, name, population, area FROM countries WHERE population IN (%s)`, placeholders)
-
-	args := make([]interface{}, len(populations))
-	for i, p := range populations {
-		args[i] = p
-	}
-
-	rows, err := db.Query(query, args...)
+	rows, err := db.Query(query, min, max)
 	if err != nil {
 		return nil, err
 	}

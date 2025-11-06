@@ -19,6 +19,7 @@ The goal of this repository is to teach you how to use **Go** with **SQLite** to
 11. **Order results By**
 12. **Limit Results**
 13. **Where Clause**
+14. **Between Clause**
 
 ---
 
