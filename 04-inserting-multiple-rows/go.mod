@@ -1,4 +1,4 @@
-module github.com/clinton-mwachia/go-sqlite-mastery/03-inserting-data
+module github.com/clinton-mwachia/go-sqlite-mastery/04-inserting-multiple-rows
 
 go 1.23.4
 

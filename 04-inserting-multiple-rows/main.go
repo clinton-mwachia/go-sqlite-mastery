@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 
-	"github.com/clinton-mwachia/go-sqlite-mastery/03-inserting-data/models"
-	"github.com/clinton-mwachia/go-sqlite-mastery/03-inserting-data/utils"
+	"github.com/clinton-mwachia/go-sqlite-mastery/04-inserting-multiple-rows/models"
+	"github.com/clinton-mwachia/go-sqlite-mastery/04-inserting-multiple-rows/utils"
 	_ "github.com/glebarez/go-sqlite"
 )
 
@@ -28,24 +28,20 @@ func main() {
 
 	fmt.Println("Table countries was created successfully.")
 
-	// create a new country
-	country := &models.Country{
-		Name:       "Kenya",
-		Population: 329064917,
-		Area:       9826675,
+	// create a countries
+	countries := []models.Country{
+		{Name: "Kenya", Population: 329064917, Area: 9826675},
+		{Name: "uganda", Population: 229064917, Area: 1826675},
+		{Name: "Tanzania", Population: 129064917, Area: 9006675},
 	}
 
-	// insert the country
-	countryId, err := utils.Insert(db, country)
+	// insert the countries
+	err = utils.InsertMultiple(db, countries)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
 	// print the inserted country
-	fmt.Printf(
-		"The country %s was inserted with ID:%d\n",
-		country.Name,
-		countryId,
-	)
+	fmt.Println("Multiple countries inserted")
 }
