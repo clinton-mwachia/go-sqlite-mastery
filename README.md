@@ -7,6 +7,7 @@ The goal of this repository is to teach you how to use **Go** with **SQLite** to
 ## **Code Structure**
 
 1. **Connect to SQLite**
+2. **Creating Tables**
 
 ---
 
