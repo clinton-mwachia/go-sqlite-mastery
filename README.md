@@ -8,6 +8,7 @@ The goal of this repository is to teach you how to use **Go** with **SQLite** to
 
 1. **Connect to SQLite**
 2. **Creating Tables**
+3. **Insert data into a Table**
 
 ---
 
