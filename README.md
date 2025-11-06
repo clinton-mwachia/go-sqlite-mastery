@@ -12,6 +12,8 @@ The goal of this repository is to teach you how to use **Go** with **SQLite** to
 4. **Insert multiple rows into a Table**
 5. **Select All from a Table**
 6. **Select by Id from a Table**
+7. **Update Data by Id from a Table**
+8. **Delete Data by Id from a Table**
 
 ---
 
