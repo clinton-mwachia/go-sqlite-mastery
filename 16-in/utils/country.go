@@ -3,10 +3,12 @@ package utils
 import (
 	"database/sql"
 	"encoding/csv"
+	"fmt"
 	"os"
 	"strconv"
+	"strings"
 
-	"github.com/clinton-mwachia/go-sqlite-mastery/13-where/models"
+	"github.com/clinton-mwachia/go-sqlite-mastery/16-in/models"
 	_ "github.com/glebarez/go-sqlite"
 )
 
@@ -68,10 +70,22 @@ func Insert(db *sql.DB, c *models.Country) (int64, error) {
 	return result.LastInsertId()
 }
 
-func FindByPopulationEqual(db *sql.DB, population int) ([]models.Country, error) {
-	query := `SELECT id, name, population, area FROM countries WHERE population = ?`
+func FindByPopulationIn(db *sql.DB, populations []int) ([]models.Country, error) {
+	if len(populations) == 0 {
+		return nil, nil
+	}
 
-	rows, err := db.Query(query, population)
+	placeholders := strings.Repeat("?,", len(populations))
+	placeholders = placeholders[:len(placeholders)-1] // remove last comma
+
+	query := fmt.Sprintf(`SELECT id, name, population, area FROM countries WHERE population IN (%s)`, placeholders)
+
+	args := make([]any, len(populations))
+	for i, p := range populations {
+		args[i] = p
+	}
+
+	rows, err := db.Query(query, args...)
 	if err != nil {
 		return nil, err
 	}

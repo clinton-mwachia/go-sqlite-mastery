@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 
-	"github.com/clinton-mwachia/go-sqlite-mastery/13-where/utils"
+	"github.com/clinton-mwachia/go-sqlite-mastery/16-in/utils"
 	_ "github.com/glebarez/go-sqlite"
 )
 
@@ -42,15 +42,15 @@ func main() {
 		}
 	}
 
-	// find countries with population equal to
-	countries, err = utils.FindByPopulationEqual(db, 1450935791)
+	// find countries with population in
+	countries, err = utils.FindByPopulationIn(db, []int{100000, 1450935791, 300000})
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
 	if len(countries) == 0 {
-		fmt.Println("No countries found")
+		fmt.Println("No countries found in that range")
 	}
 
 	for _, c := range countries {

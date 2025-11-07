@@ -18,9 +18,10 @@ The goal of this repository is to teach you how to use **Go** with **SQLite** to
 10. **Import csv data into the Table**
 11. **Order results By**
 12. **Limit Results**
-13. **Where Clause**
-14. **Between Clause**
-15. **And Clause**
+13. **Where Operator**
+14. **Between Operator**
+15. **And Operator**
+16. **In Operator**
 
 ---
 
