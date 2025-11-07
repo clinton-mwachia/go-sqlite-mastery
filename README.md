@@ -25,9 +25,12 @@ The goal of this repository is to teach you how to use **Go** with **SQLite** to
 17. **Or Operator**
 18. **Like Operator**
 19. **IS NULL Operator**
-20. **Distinct Operator**
-21. **Average Function**
-22. **Count Function**
+20. **Glob Operator**
+21. **Distinct Operator**
+22. **Average Function**
+23. **Count Function**
+24. **Max Function**
+25. **Min Function**
 
 ---
 
