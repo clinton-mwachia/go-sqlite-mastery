@@ -25,6 +25,7 @@ The goal of this repository is to teach you how to use **Go** with **SQLite** to
 17. **Or Operator**
 18. **Like Operator**
 19. **IS NULL Operator**
+20. **Distinct Operator**
 
 ---
 
