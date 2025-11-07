@@ -31,6 +31,7 @@ The goal of this repository is to teach you how to use **Go** with **SQLite** to
 23. **Count Function**
 24. **Max Function**
 25. **Min Function**
+26. **Total Function**
 
 ---
 
@@ -57,8 +58,6 @@ Each folder contains a `main.go` or multiple Go files. Navigate to the folder an
 go run main.go
 ```
 
-> ⚠️ Note: Some examples may require you to create a database file first. Follow instructions in the respective folder README.
-
 ---
 
 ## **Folder Structure**
@@ -66,14 +65,16 @@ go run main.go
 ```
 go-sqlite-mastery/
 │
-├─ 01-connect/           #
-├─ 02-creating tables/                  #
-├─ 03-/             #
-├─ 04-/                   #
-├─ 05-/        #
-├─ 06-/    #
-├─ 07-/        #
-└─ 08-/        #
+├─ 01-connect-to-sqlite/
+├─ 02-creating-tables/
+├─ 03-inserting-row/
+├─ ...
+├─ ...
+├─ ...
+├─ ...
+└─ ...
+.gitignore
+LICENSE
 README.md
 ```
 
