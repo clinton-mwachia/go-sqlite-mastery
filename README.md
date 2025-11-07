@@ -23,6 +23,7 @@ The goal of this repository is to teach you how to use **Go** with **SQLite** to
 15. **And Operator**
 16. **In Operator**
 17. **Or Operator**
+18. **Like Operator**
 
 ---
 
