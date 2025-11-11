@@ -86,6 +86,8 @@ func InsertSampleData(db *sql.DB) error {
 	return nil
 }
 
+// Inner Join combines rows from two tables based on a matching condition in a common column,
+// returning only the rows where the condition is met in both tables
 func GetCitiesWithCountries(db *sql.DB) ([]models.City, error) {
 	query := `
 		SELECT c.name AS country_name, ci.name AS city_name, ci.population
