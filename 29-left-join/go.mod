@@ -3,7 +3,7 @@ module github.com/clinton-mwachia/go-sqlite-mastery/29-left-join
 go 1.23.4
 
 require (
-	github.com/clinton-mwachia/go-sqlite-mastery/28-inner-join v0.0.0-20251111063317-6415430312ed
+	github.com/clinton-mwachia/go-sqlite-mastery/29-left-join v0.0.0-20251111063317-6415430312ed
 	github.com/glebarez/go-sqlite v1.22.0
 )
 
